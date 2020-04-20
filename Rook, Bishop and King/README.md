@@ -5,3 +5,7 @@ Little Petya is learning to play chess. He has already learned how to move a kin
 * A rook moves any number of fields horizontally or vertically.
 * A bishop moves any number of fields diagonally.
 * A king moves one field in any direction — horizontally, vertically or diagonally.
+
+> The pieces move like that
+
+Petya is thinking about the following problem: what minimum number of moves is needed for each of these pieces to move from field (r1, c1) to field (r2, c2)? At that, we assume that there are no more pieces besides this one on the board. Help him solve this problem.
