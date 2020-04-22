@@ -1,11 +1,14 @@
-def isOdd(num): # aux function to know if a number is odd or not
-    if num % 2 == 0: return False
+def isOdd(num):  # aux function to know if a number is odd or not
+    if num % 2 == 0:
+        return False
     return True
 
-def isBlackTile(tile): # aux function to know if a tile is black or white
-    if (isOdd(tile[0]) and isOdd(tile[1])) or (not isOdd(tile[0]) and  not isOdd(tile[1])):
+
+def isBlackTile(tile):  # aux function to know if a tile is black or white
+    if (isOdd(tile[0]) and isOdd(tile[1])) or (not isOdd(tile[0]) and not isOdd(tile[1])):
         return True
     return False
+
 
 def main(inp):
     origin = [inp[0], inp[1]]
@@ -43,18 +46,25 @@ def main(inp):
 
     return res
 
+
 def test(testNum, inp, ans):
     print("Case "+str(testNum)+"..........", end=" ")
     res = main(inp)
-    assert res == ans, "out: "+ str(res)+" Should be: "+str(ans)
+    assert res == ans, "out: " + str(res)+" Should be: "+str(ans)
     print("Success!")
+
 
 def tdd():
     test(1, [4, 3, 1, 6], "2 1 3")
     test(2, [5, 5, 5, 6], "1 0 1")
+
+
 def user():
     inp = list(map(int, input().split()))
     print(main(inp))
 
-#tdd() # execute test (only during development)
-user()
+
+# --------------------------- MAIN ------------------------------
+testMode = False
+if (testMode): tdd()
+else: user()
