@@ -1,6 +1,6 @@
 # CodingProblems (from codeforces) by SSAM
 ### Objective:
-To store my solutions to coding problems
+To store my solutions to coding problems.
 
 ### Notes:
 All files have 2 modes: testing and user.
