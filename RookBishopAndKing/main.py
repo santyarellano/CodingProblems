@@ -1,3 +1,12 @@
+def isOdd(num): # aux function to know if a number is odd or not
+    if num % 2 == 0: return False
+    return True
+
+def isBlackTile(tile): # aux function to know if a tile is black or white
+    if (isOdd(tile[0]) and isOdd(tile[1])) or (not isOdd(tile[0]) and  not isOdd(tile[1])):
+        return True
+    return False
+
 def main(inp):
     origin = [inp[0], inp[1]]
     destination = [inp[2], inp[3]]
@@ -8,7 +17,7 @@ def main(inp):
     #   if not, then it's 2 moves
     if origin == destination:
         res += "0 "
-    elif origin[0] == destination[0] or origin[1] == destination[1]:
+    if origin[0] == destination[0] or origin[1] == destination[1]:
         res += "1 "
     else:
         res += "2 "
@@ -21,8 +30,16 @@ def main(inp):
         res += "0 "
     elif abs(origin[0] - destination[0]) == abs(origin[1] - destination[1]):
         res += "1 "
-    elif 
+    elif isBlackTile(origin) == isBlackTile(destination):
+        res += "2 "
+    else:
+        res += "0 "
+
     # lets go for king
+    # movement is equal to the biggest absolute difference between axis
+    diffX = abs(origin[0]-destination[0])
+    diffY = abs(origin[1]-destination[1])
+    res += str(max(diffX, diffY))
 
     return res
 
@@ -35,6 +52,9 @@ def test(testNum, inp, ans):
 def tdd():
     test(1, [4, 3, 1, 6], "2 1 3")
     test(2, [5, 5, 5, 6], "1 0 1")
+def user():
+    inp = list(map(int, input().split()))
+    print(main(inp))
 
-# execute test (only during development)
-tdd()
+#tdd() # execute test (only during development)
+user()
