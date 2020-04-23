@@ -18,7 +18,7 @@ You can assume that the chessboard rows are numbered from top to bottom 1 throug
 ### Output
 Print three space-separated integers: the minimum number of moves the rook, the bishop and the king (in this order) is needed to move from field (r1, c1) to field (r2, c2). If a piece cannot make such a move, print a 0 instead of the corresponding number.
 
-# Solution
+# :crystal_ball: :bulb: Solution :bulb: :crystal_ball:
 Basically all we have to do is split the problem in 3 parts with the same input. First, we'll need to check how to solve the problem with the rook's rules, then with the Bishop's rules, and finally with the King's rules. Let's go over each one of them.
 
 ### Rook
