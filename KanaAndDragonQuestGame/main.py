@@ -1,3 +1,18 @@
+import math
+
+def weakDragon(health, voids, lighting):
+    min2Kill = lighting * 10
+    if health <= min2Kill: return True
+    for x in range(voids):
+        health = math.floor(health/2) + 10
+        if health <= min2Kill: return True
+    return False
+
+def main(t, cases):
+    for dragon in cases:
+        if weakDragon(dragon[0], dragon[1], dragon[2]): print("YES")
+        else: print("NO")
+
 def tdd():
     t = 7
     cases = [
@@ -10,3 +25,8 @@ def tdd():
         [69117, 21, 2]
     ]
     main(t, cases)
+
+#----------------- MAIN -------------------------
+testing = True
+if testing: tdd()
+#else: user()
