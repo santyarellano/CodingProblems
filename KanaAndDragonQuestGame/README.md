@@ -27,4 +27,15 @@ If it is possible to defeat the dragon, print "YES" (without quotes). Otherwise,
 You can print each letter in any case (upper or lower).
 
 # :crystal_ball: :bulb: Solution :bulb: :crystal_ball:
-solution...
+
+If you read carefully how the void absorption spell works, you will notice it falls in a wanna-be-logarithmic function. This way, there are 2 things to consider:
+
+1. The dragon's health can decrease rapidly.
+2. The dragon's health cannot get to 0 without a lightning strike.
+
+With these considerations a rule can be defined:
+> In order to kill the dragon one must use enough void absorption spells to reach 10 times the amount of lightning strikes available.
+
+And that's it! All we have to do is iterate over every case using void absorption spells until we reach that number. If we run out of void absorption spells, then the dragon won't be killed.
+
+- Exception: One must check first if the dragon can be killed only with the lightning strikes.
