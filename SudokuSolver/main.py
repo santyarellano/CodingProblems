@@ -63,30 +63,31 @@ def getBlock(s, x, y):
     return block
 
 def solveByCellUnique(s):
+    cp = s
     hasFound = True
     while hasFound:
         hasFound = False
         for i in range(9):
             for j in range(9):
-                if s[i][j] == 0:
+                if cp[i][j] == 0:
                     possibleNums = [1,2,3,4,5,6,7,8,9]
                     #remove nums from row
-                    possibleNums = removeFromList(possibleNums, s[i])
+                    possibleNums = removeFromList(possibleNums, cp[i])
                     #remove nums from column
-                    col = getColumn(s, j)
+                    col = getColumn(cp, j)
                     possibleNums = removeFromList(possibleNums, col)
                     #remove nums from block
-                    block = getBlock(s, i, j)
+                    block = getBlock(cp, i, j)
                     possibleNums = removeFromList(possibleNums, block)
                     if len(possibleNums) == 1:
-                        s[i][j] = possibleNums[0]
+                        cp[i][j] = possibleNums[0]
                         hasFound = True
-    return s
+    return cp
 
 def solve(s):
     # attempt to solve by finding cells with only one possible value
-    s = solveByCellUnique(s)
-    return s
+    cp = solveByCellUnique(s)
+    return cp
 
 def test(testName, output, expected):
     print(f"{testName}..........", end=" ")
@@ -152,7 +153,7 @@ def tdd():
 #---------------------------------------- MAIN -----------------------------------------------------
 printSudoku(testSudo)
 input("Press any key to solve...")
-res = solve(testSudo)
 clear()
-printSudoku(res)
 tdd()
+res = solve(testSudo)
+printSudoku(res)
