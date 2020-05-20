@@ -154,6 +154,6 @@ def tdd():
 printSudoku(testSudo)
 input("Press any key to solve...")
 clear()
-tdd()
+#tdd()
 res = solve(testSudo)
 printSudoku(res)
