@@ -77,7 +77,7 @@ def solveByCellUnique(s):
                     col = getColumn(cp, j)
                     possibleNums = removeFromList(possibleNums, col)
                     #remove nums from block
-                    block = getBlock(cp, i, j)
+                    block = getBlock(cp, j, i)
                     possibleNums = removeFromList(possibleNums, block)
                     if len(possibleNums) == 1:
                         cp[i][j] = possibleNums[0]
