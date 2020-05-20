@@ -15,6 +15,18 @@ testSudo = [
     [0,0,0,0,8,0,0,7,9]
 ]
 
+#testSudo = [
+#    [0,0,0,0,4,9,0,3,0],
+#    [0,0,0,0,0,0,8,0,0],
+#    [2,0,0,0,0,8,7,0,4],
+#    [0,0,2,0,8,0,0,0,0],
+#    [0,9,0,0,6,0,3,0,0],
+#    [4,0,8,0,0,1,0,0,0],
+#    [0,0,0,0,5,0,0,0,1],
+#    [8,0,0,6,0,0,0,2,0],
+#    [0,2,0,1,0,4,0,6,0]
+#]
+
 def clear():
     # for windows 
     if name == 'nt': 
@@ -154,6 +166,6 @@ def tdd():
 printSudoku(testSudo)
 input("Press any key to solve...")
 clear()
-#tdd()
+tdd()
 res = solve(testSudo)
 printSudoku(res)
